@@ -56,8 +56,10 @@ FROM orders
 WHERE total_amount BETWEEN 2000000 AND 5000000
   AND status <> 'CANCELLED'
   AND (
-        note LIKE N'%gấp%'   -- hỗ trợ unicode
+        note LIKE N'%gấp%'   
         OR user_id IS NULL
       )
 ORDER BY total_amount DESC
 LIMIT 20 OFFSET 40;
+
+SELECT * FROM orders;
